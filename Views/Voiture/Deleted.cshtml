@@ -1,0 +1,18 @@
+﻿@model Agence.Models.Voiture
+@{
+    ViewBag.Title = "Saved";
+}
+
+<h1>Vehicule Supprimé</h1>
+@using (Html.BeginForm("See", "Voiture"))
+{
+    <input type="submit" value="Liste vehicules" />
+}
+@using (Html.BeginForm("SaveV", "Voiture"))
+{
+    <input type="submit" value="Ajouter voiture" />
+}
+
+
+
+

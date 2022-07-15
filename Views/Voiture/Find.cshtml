@@ -1,0 +1,27 @@
+﻿@model Agence.Models.Voiture
+@{
+    ViewBag.Title = "Find";
+}
+
+
+@if (ViewBag.b == 1)
+{
+    @Html.Label("Id:")
+    @Html.TextBox("id", (int)ViewBag.fId)
+    @Html.Label("Matricule:")
+    @Html.TextBox("Matricule", (string)ViewBag.fMatricule)
+    @Html.Label("Marque:")
+    @Html.TextBox("Marque", (string)ViewBag.fMarque)
+    @Html.Label("Prix:")
+    @Html.TextBox("prix", (double)ViewBag.fPrix)
+    @Html.Label("Date ajout:")
+    @Html.TextBox("date", (DateTime)ViewBag.fDate)<hr />}
+@if(ViewBag.b == 0) { 
+<h3>@ViewData["message"]</h3>}
+
+
+@using (Html.BeginForm("See", "Voiture"))
+{
+    <input type="submit" value="Retour" />
+}
+

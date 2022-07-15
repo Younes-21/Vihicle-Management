@@ -1,0 +1,19 @@
+﻿@model Agence.Models.Voiture
+@{
+    ViewBag.Title = "Recup";
+}
+@using (Html.BeginForm("Update", "Voiture"))
+{
+    @Html.Label("Id:")
+    @Html.TextBox("Id", (int)ViewBag.sId)
+    @Html.Label("Matricule:")
+    @Html.TextBox("Matricule", (string)ViewBag.sMatricule)
+    @Html.Label("Marque:")
+    @Html.TextBox("Marque", (string)ViewBag.sMarque)
+    @Html.Label("Prix:")
+    @Html.TextBox("Prix", (double)ViewBag.sPrix)
+
+    <input type="submit" value="Enregistrer" />
+}
+
+

@@ -1,0 +1,24 @@
+﻿@User Agence.Models
+@model Agence.Models.Voiture
+@{
+    ViewBag.Title = "SaveV";
+}
+
+<h1>Remplir les information suivantes :</h1>
+@using (Html.BeginForm("Saved", "Voiture"))
+{
+    @Html.Label("Id voiture:")
+    @Html.TextBox("Id")
+
+    @Html.Label("Matricule:")
+    @Html.TextBox("Matricule")
+
+    @Html.Label("Marque:")
+    @Html.TextBox("Marque")
+
+    @Html.Label("Prix:")
+    @Html.TextBox("Prix")
+
+    <input type="submit" value="Ajouter" />
+}
+

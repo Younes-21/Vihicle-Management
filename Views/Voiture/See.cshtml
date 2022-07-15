@@ -1,0 +1,38 @@
+﻿@model Agence.Models.Voiture
+@{
+    ViewBag.Title = "List";
+}
+
+<h1>Liste voitures :</h1>
+@using (Html.BeginForm("Find", "Voiture"))
+{@Html.Label("Chercher une voiture par son ID:")
+@Html.TextBox("Id")
+<input type="submit" value="Chercher" />
+}
+@foreach (var it in ViewBag.car)
+{@Html.Label("Id:")
+@Html.TextBox("id", (int)it.Id)
+@Html.Label("Matricule:")
+@Html.TextBox("Matricule", (string)it.Matricule)
+@Html.Label("Marque:")
+@Html.TextBox("Marque", (string)it.Marque)
+@Html.Label("Prix:")
+@Html.TextBox("prix", (double)it.Prix)
+@Html.Label("Date d'ajout:")
+@Html.TextBox("date", (DateTime)it.Date_ajout)
+
+using (Html.BeginForm("Recup", "Voiture"))
+{@Html.Hidden("Id", (int)it.Id)
+
+<input type="submit" value="Modifier" />
+}
+using (Html.BeginForm("Deleted", "Voiture"))
+{@Html.Hidden("Id", (int)it.Id)
+<input type="submit" value="Supprimer" />
+}
+<hr />
+}
+
+
+
+
